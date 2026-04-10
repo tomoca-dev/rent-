@@ -1,0 +1,7 @@
+{
+  "name": "VAULTLINE Financial Intelligence",
+  "description": "A high-end, institutional-grade payment control system for premium commercial real estate assets. Features autonomous collection tracking, AI-driven risk intelligence, and private-banking aesthetics.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}

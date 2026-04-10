@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  body {
+    @apply antialiased overflow-hidden transition-colors duration-500;
+    font-family: var(--font-sans);
+  }
+
+  /* Theme Definitions */
+  :root {
+    --bg: #050505;
+    --text: #E5E7EB;
+    --accent: #C5A059;
+    --glass-bg: rgba(10, 10, 10, 0.8);
+    --border: rgba(255, 255, 255, 0.05);
+    --card-bg: #111111;
+    --surface: rgba(24, 24, 27, 0.5);
+    --surface-hover: rgba(39, 39, 42, 0.5);
+    --muted: #71717a;
+    --scrollbar-track: #0A0A0A;
+    --scrollbar-thumb: #262626;
+  }
+
+  [data-theme='LIGHT'] {
+    --bg: #FDFDFD;
+    --text: #18181b;
+    --accent: #2563EB;
+    --glass-bg: rgba(255, 255, 255, 0.85);
+    --border: rgba(0, 0, 0, 0.1);
+    --card-bg: #FFFFFF;
+    --surface: rgba(244, 244, 245, 0.8);
+    --surface-hover: rgba(228, 228, 231, 0.9);
+    --muted: #52525b;
+    --scrollbar-track: #F1F5F9;
+    --scrollbar-thumb: #CBD5E1;
+  }
+
+  [data-theme='COBALT'] {
+    --bg: #020617;
+    --text: #F1F5F9;
+    --accent: #38BDF8;
+    --glass-bg: rgba(15, 23, 42, 0.8);
+    --border: rgba(56, 189, 248, 0.1);
+    --card-bg: #0F172A;
+    --surface: rgba(30, 41, 59, 0.5);
+    --surface-hover: rgba(51, 65, 85, 0.5);
+    --muted: #94a3b8;
+    --scrollbar-track: #020617;
+    --scrollbar-thumb: #1E293B;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--text);
+  }
+}
+
+@layer components {
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border);
+  }
+  
+  .premium-border {
+    border-color: var(--border);
+  }
+
+  .surface-bg {
+    background-color: var(--surface);
+  }
+
+  .surface-hover:hover {
+    background-color: var(--surface-hover);
+  }
+  
+  .gold-accent {
+    color: var(--accent);
+  }
+
+  .theme-text {
+    color: var(--text);
+  }
+
+  .theme-muted {
+    color: var(--muted);
+  }
+  
+  .state-pulse {
+    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  .ownership-theme {
+    --accent: #C5A059;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .4; }
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 10px;
+}
